@@ -3,7 +3,7 @@
 
 #define MAX_USERS 10
 #define MAX_USERNAME_LENGTH 20
-#define MAX_PASSWORD_LENGTH 20
+#define MAX_PASSWORD_LENGTH 30
 
 typedef struct {
     char username[MAX_USERNAME_LENGTH];
@@ -17,17 +17,17 @@ void registerUser() {
     if (userCount < MAX_USERS) {
         User newUser;
 
-        printf("Enter a username (up to %d characters): ", MAX_USERNAME_LENGTH);
+        printf("Enter your username (up to %d characters): ", MAX_USERNAME_LENGTH);
         scanf("%s", newUser.username);
 
-        printf("Enter a password (up to %d characters): ", MAX_PASSWORD_LENGTH);
+        printf("Enter your password (up to %d characters): ", MAX_PASSWORD_LENGTH);
         scanf("%s", newUser.password);
 
         users[userCount] = newUser;
         userCount++;
         printf("Registration successful!\n");
     } else {
-        printf("User limit reached. Cannot register.\n");
+        printf(" Cannot register\n");
     }
 }
 
@@ -48,7 +48,7 @@ int loginUser() {
         }
     }
     
-    printf("Login failed. Invalid username or password.\n");
+    printf("Invalid username or password.\n");
     return 0;
 }
 
@@ -66,13 +66,13 @@ int main() {
                 break;
             case 2:
                 if (loginUser()) {
-                    // Perform actions after successful login
+                
                 }
                 break;
             
                 return 0;
             default:
-                printf("Invalid choice. Please try again.\n");
+                printf("Please try again\n");
         }
     }
 
